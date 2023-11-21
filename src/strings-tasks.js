@@ -114,8 +114,8 @@ function removeLeadingWhitespaces(value) {
  *   removeTrailingWhitespaces('cat ') => 'cat'
  *   removeTrailingWhitespaces('\t\t\tHello, World! ') => '\t\t\tHello, World!'
  */
-function removeTrailingWhitespaces(/* value */) {
-  throw new Error('Not implemented');
+function removeTrailingWhitespaces(value) {
+  return value.trimEnd();
 }
 
 /**
@@ -405,8 +405,18 @@ function reverseWords(str) {
  *   invertCase('JavaScript is Fun') => 'jAVAsCRIPT IS fUN'
  *   invertCase('12345') => '12345'
  */
-function invertCase(/* str */) {
-  throw new Error('Not implemented');
+function invertCase(str) {
+  const result = [];
+
+  for (let i = 0; i < str.length; i += 1) {
+    if (str[i].toUpperCase() === str[i]) {
+      result.push(str[i].toLowerCase());
+    } else {
+      result.push(str[i].toUpperCase());
+    }
+  }
+
+  return result.join('');
 }
 
 /**
